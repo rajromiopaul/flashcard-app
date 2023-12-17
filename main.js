@@ -70,11 +70,9 @@ const handleDone = () => {
     resetButton.classList.add('hidden');
 }
 
-const handleScore = (flashcardsData) => {
-  result = flashcardsData.length;
-  for(i=0; i<flashcardsData.length; i--){
-    result -= flashcardsData[i];
-  }
-  return result;
-}
-testScore.innerText = 'Score = ', (result);
+let score = flashcardsData.length;
+testScore.textContent = "Your Score is: "+score;
+  cardContainer.addEventListener('click', () => {
+  score--;
+  testScore.textContent = "Your Score is: "+score;
+});
